@@ -1,0 +1,20 @@
+//AMBERHX  JOB 1,NOTIFY=&SYSUID,CLASS=7,MSGCLASS=X
+//ASM      EXEC ASMACL,MBR=AMBERHX
+//C.SYSIN  DD *
+AMBERHX   CSECT
+R12      EQU   12
+R13      EQU   13
+R14      EQU   14
+R15      EQU   15
+         STM   R14,R15,12(R13)
+         LR    R12,R15
+         USING AMBERHX,R12
+         LM    R14,R15,12(R13)
+         XR    R15,R15
+         BR    R14
+         DROP  R12
+         END   AMBERHX
+/*
+//GO       EXEC PGM=AMBERHX
+//STEPLIB  DD DSN=&SYSUID..LOAD,DISP=SHR
+//PRINT    DD SYSOUT=*

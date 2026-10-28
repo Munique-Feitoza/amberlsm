@@ -1,0 +1,21 @@
+# Segredos e configurações locais
+.env
+.env.*
+!.env.example
+
+# Artefatos Rust
+/target/
+
+# Dados gerados pelo AmberLSM durante testes
+/dados/
+*.wal
+*.sst
+*.sst.tmp
+wal.log
+sst-*.dat
+
+# Editor e sistema operacional
+.idea/
+.vscode/
+*.swp
+.DS_Store
